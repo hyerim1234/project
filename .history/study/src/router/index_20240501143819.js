@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
-import LoginView from '../views/LoginView.vue'
+import Login from '../views/Login.vue'
+
 const routes = [
   {
     path: '/',
@@ -9,14 +10,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
+    path: '/about',  // About 페이지에 대한 라우트 설정
     name: 'about',
     component: AboutView
   },
   {
     path: '/login',
     name: 'login',
-    component: LoginView
+    component: Login
   }
 ]
 
