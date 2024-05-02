@@ -5,7 +5,6 @@
         <input type="text" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500" v-bind:value="userId" readonly />
         <input type="text" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 mx-2" :value="userId" readonly />
       </div>
-
       <div class="flex justify-center my-6">
         <img :src="imgSrc" alt="Vue.js logo" class="w-24 h-auto" />
       </div>
@@ -13,7 +12,7 @@
         <input type="search" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500" v-model="txt1" placeholder="Enter search term" />
       </div>
       <div class="flex justify-center">
-        <button class="px-6 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-700 disabled:opacity-50" :disabled="txt1 === ''">조회</button>
+        <button class="px-6 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-700 disabled:opacity-50" :disabled="txt1 === ''" @click="search">조회</button>
       </div>
     </div>
   </div>
@@ -26,6 +25,12 @@ export default {
       userId: 'hyerim',
       imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Vue.png',
       txt1: ''
+    }
+  },
+  methods: {
+    search () {
+      const result = '검색 결과: ' + this.txt1
+      alert(result)
     }
   }
 }

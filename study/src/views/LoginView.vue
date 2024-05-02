@@ -1,27 +1,34 @@
 <template>
-    <div class="min-h-screen flex items-center justify-center bg-gray-100 login">
-      <div class="max-w-md w-full bg-white p-6 rounded-lg shadow-md">
+  <div class="login">
+    <div class="min-h-screen pl-[102px]">
+      <div class="w-full h-[100vh] max-w-md p-6 bg-white-25 bg-opacity-95  pt-[274px]">
         <form @submit.prevent="loginSubmit" class="space-y-6">
-          <div>
-            <label for="userId" class="sr-only">User ID</label>
-            <div class="flex items-center border-2 border-gray-300 rounded-lg px-3 py-2">
-              <i class="fas fa-user text-gray-500"></i>
-              <input id="userId" v-model="userId" type="text" required class="ml-2 p-1 flex-1 w-full outline-none" placeholder="UserId">
-            </div>
+          <div class="text-left text-grey-200 font-semibold">
+            <label for="userId" class="pl-2">Id</label>
+            <input placeholder="User Id" type="text"  v-model="userId" id="userId" class="ml-2 p-1 flex-1 w-full border-gray-300 border-2 rounded-lg px-3 py-1 placeholder:font-normal" required>
           </div>
-          <div>
-            <label for="userPassword" class="sr-only">Password</label>
-            <div class="flex items-center border-2 border-gray-300 rounded-lg px-3 py-2">
-              <i class="fas fa-lock text-gray-500"></i>
-              <input id="userPassword" v-model="userPassword" type="password" required class="ml-2 p-1 flex-1 w-full outline-none" placeholder="Password">
-            </div>
+          <div class="text-left text-grey-200 font-semibold">
+            <label for="userPassword" class="pl-2">Password</label>
+            <input placeholder="User Password" type="password" v-model="userPassword" id="userPassword" class="ml-2 p-1 flex-1 w-full border-gray-300 border-2 rounded-lg px-3 py-1 placeholder:font-normal" required>
           </div>
-          <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-blue active:bg-blue-700 transition duration-150 ease-in-out">
-            Login
-          </button>
+          <div class="text-left text-grey-200 font-semibold pl-2">
+            <!-- <input type="checkbox" name="" id="" class="custom-checkbox"> -->
+            <input type="checkbox" id="chk" class="hidden w-[50px] h-[50px] border-black-2">
+            <label for="chk"></label>
+            <label for="userPassword" class="text-sm mx-1">자동로그인</label>
+            <a href="" class="float-right text-blue-500 text-sm">비밀번호 찾기</a>
+            <button type="submit" class="my-4 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white-100 bg-blue-500 hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-blue active:bg-blue-700 transition duration-150 ease-in-out">
+            로그인
+            </button>
+          </div>
+          <div class="font-semibold text-sm">
+            아직 회원이 아니신가요?
+            <a href="{{ link }}" class="text-blue-500 mx-2">회원가입하기</a>
+          </div>
         </form>
       </div>
     </div>
+  </div>
   </template>
 
 <script>
@@ -55,3 +62,47 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .login {
+    background-image: url('../assets/login_bg.svg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* check box custom */
+  #chk + label{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none; /* can not drag*/
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  #chk:checked + label{
+    background-color: white;
+  }
+
+  #chk + label + label{
+    position: relative;
+    user-select: none;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+
+  input:checked + label:before {
+    content:'✔';
+    width: 12px;
+    height: 12px;
+    top: 15%;
+    left: 15%;
+    margin-top:-4px;
+    position: absolute;
+    color:blue;
+  }
+</style>
