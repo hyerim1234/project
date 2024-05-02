@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
+import DataBindingAttributeView from '@/views/1_databinding/DataBindingAttributeView.vue'
+
 const routes = [
   {
     path: '/',
@@ -17,6 +19,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/databinding',
+    name: 'databinding',
+    component: DataBindingAttributeView
   }
 ]
 
