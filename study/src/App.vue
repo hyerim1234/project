@@ -4,6 +4,10 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/Login">Login</router-link> |
     <router-link to="/databinding">databinding</router-link> |
+    <router-link to="/event/click">event click</router-link> |
+    <router-link to="/extra/if">RenderingIfView</router-link> |
+    <router-link to="/extra/computed">computed</router-link> |
+    <router-link to="/extra/watch">watch</router-link> |
   </nav>
   <router-view/>
 </template>
