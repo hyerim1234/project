@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import DataBindingAttributeView from '@/views/1_databinding/DataBindingAttributeView.vue'
+import EventChangeView from '@/views/2_event/EventChangeView.vue'
+import RenderingIfView from '@/views/3_extra/RenderingIfView.vue'
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/databinding',
     name: 'databinding',
     component: DataBindingAttributeView
+  },
+  {
+    path: '/event/change',
+    name: 'EventChangeView',
+    component: EventChangeView
+  },
+  {
+    path: '/extra/if',
+    name: 'RenderingIfView',
+    component: RenderingIfView
   }
 ]
 
