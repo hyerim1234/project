@@ -1,4 +1,4 @@
-# re100_pj
+# study
 
 ## Project setup
 ```
