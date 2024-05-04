@@ -16,7 +16,7 @@
         <power-usage></power-usage>
         <site-count></site-count>
         
-        <div class="col-span-4">
+        <div class="col-span-4 bg-black">
           <energy-table></energy-table>
         </div>
       </div>

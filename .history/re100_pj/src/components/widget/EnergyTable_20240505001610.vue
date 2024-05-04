@@ -25,6 +25,7 @@
       </div>
       <!-- Expandable Row Detail -->
       <div v-if="showDetails" class="flex flex-col bg-gray-100 p-3">
+        <div>상세 정보</div>
         <div class="flex justify-between">
           <div class="w-1/6">300MW</div>
           <div class="w-1/6">가동</div>

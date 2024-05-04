@@ -10,7 +10,7 @@
     </nav>
     <!-- 조건부 렌더링을 사용한 컴포넌트 표시 -->
     <div v-if="currentTab === '실시간 정보'" class="bg-blue-100">
-      <div class="grid grid-cols-4 gap-4 bg-pink-300">
+      <div class="grid grid-cols-4 gap-4">
         <progress-circle></progress-circle>
         <energy-chart></energy-chart>
         <power-usage></power-usage>

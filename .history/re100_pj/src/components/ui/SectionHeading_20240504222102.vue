@@ -9,14 +9,14 @@
       </a>
     </nav>
     <!-- 조건부 렌더링을 사용한 컴포넌트 표시 -->
-    <div v-if="currentTab === '실시간 정보'" class="bg-blue-100">
-      <div class="grid grid-cols-4 gap-4 bg-pink-300">
+    <div v-if="currentTab === '실시간 정보'" class="bg-black-50">
+      <div>
         <progress-circle></progress-circle>
         <energy-chart></energy-chart>
         <power-usage></power-usage>
         <site-count></site-count>
         
-        <div class="col-span-4">
+        <div>
           <energy-table></energy-table>
         </div>
       </div>
