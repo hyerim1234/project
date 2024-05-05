@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
+import MainView from'../views/MainView.vue'
 
 
 // 라우터 설정
@@ -22,6 +23,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/main',
+    name: 'main',
+    component: MainView
   }
 ]
 

@@ -1,6 +1,5 @@
 <template>
     <div class="progress-circle bg-[#b2ceff] shadow-md p-4 rounded-lg w-1/5">
-      RE100 이행률
       <div class="relative">
         <svg viewBox="0 0 36 36" class="circular-chart my-2">
           <!-- 배경 원 -->

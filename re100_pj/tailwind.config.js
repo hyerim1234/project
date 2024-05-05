@@ -1,3 +1,4 @@
+//tailwind.config.js
 module.exports = {
   content: ['./src/**/*.{vue,js,ts,jsx,tsx,html}'],
   theme: {
@@ -17,7 +18,7 @@ module.exports = {
           900: '#101828',
         }
       }
-    }
+    },
   },
   plugins: []
 }

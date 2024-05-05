@@ -1,49 +1,39 @@
 <template>
-  <section>
-      <section-heading title="Welcome to Our Service"></section-heading>
-    </section>
-  
-    <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/Login">Login</router-link> |
-    <router-link to="/databinding">databinding</router-link> |
-    <router-link to="/event/click">event click</router-link> |
-    <router-link to="/extra/if">RenderingIfView</router-link> |
-    <router-link to="/extra/computed">computed</router-link> |
-    <router-link to="/extra/watch">watch</router-link> |
-  </nav> -->
+  <div class="bg-[#f2f4f7]">
+    <nav class="flex space-x-4 bg-[#0b2549] py-4">
+      <a v-for="tab in tabs" :key="tab"
+         :class="['py-2 px-4 text-sm font-medium text-center rounded-full cursor-pointer',
+                  currentTab === tab ? 'bg-blue-600 text-white-100 rounded-full' : 'text-gray-600 border-transparent']"
+         @click="currentTab = tab">
+        {{ tab }}
+      </a>
+    </nav>
 
-  <router-view/>
+    <!-- 조건부 렌더링을 사용한 컴포넌트 표시 -->
+    <div v-if="currentTab === '실시간 정보'">
+      <main-content-cards-vue></main-content-cards-vue>
+      <energy-table></energy-table>
+    </div>
+  </div>
 </template>
-<script>
-import SectionHeading from '@/components/ui/SectionHeading.vue';
 
+<script>
+import MainContentCardsVue from '@/components/ui/MainContentCards.vue';
+import EnergyTable from '@/components/widget/EnergyTable.vue';
 export default {
   components: {
-    SectionHeading
+    MainContentCardsVue,
+    EnergyTable
+  },
+  data() {
+    return {
+      currentTab: '실시간 정보',
+      tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired']
+    };
   }
 }
 </script>
-<style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
 
-  nav {
-    padding: 30px;
-  }
-
-  nav a {
-    font-weight: bold;
-    color: #2c3e50;
-  }
-
-  nav a.router-link-exact-active {
-    color: #42b983;
-  }
+<style scoped>
+/* Tailwind CSS is utility-first, so most styling is done in the template via class bindings */
 </style>
