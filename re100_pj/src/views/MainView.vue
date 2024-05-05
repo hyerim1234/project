@@ -10,8 +10,8 @@
         </a>
       </nav>
       <!-- Main Content Section -->
-      <div class="flex flex-wrap justify-center items-center gap-6 p-6 bg-gray-50">
-        <div v-for="card in cards" :key="card.title" class="bg-white rounded-lg shadow-md p-4 w-64 flex flex-col items-center">
+      <div class="flex flex-wrap justify-between items-center gap-6  bg-gray-50">
+        <div v-for="card in cards" :key="card.title" class="bg-white rounded-lg shadow-md  flex flex-col items-center">
           <progress-circle :percentage="card.percentage" />
           <h3 class="text-lg font-semibold mt-2">{{ card.title }}</h3>
           <p class="text-gray-600">{{ card.subtitle }}</p>
@@ -42,16 +42,4 @@
   }
   </script>
   
-  <style scoped>
-  .circular-chart {
-    width: 100%; /* Adjust to control size of the circle */
-    max-width: 150px; /* Maximum size */
-  }
-  .circle-bg {
-    stroke: #eee; /* Background circle color */
-  }
-  .circle {
-    transition: stroke-dasharray 0.6s ease; /* Animation effect */
-  }
-  </style>
   

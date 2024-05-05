@@ -1,9 +1,9 @@
 <template>
-    <div class="flex flex-wrap justify-center items-center gap-6 p-6 bg-gray-50">
-      <div v-for="card in cards" :key="card.title" class="bg-white rounded-lg shadow-md p-4 w-64 flex flex-col items-center">
-        <ProgressCircle :percentage="card.percentage" />
+    <div class="justify-between items-center  bg-gray-50 flex pt-6">
+      <div v-for="card in cards" :key="card.title" class="rounded-lg shadow-md w-full h-44 pl-4 mx-6">
         <h3 class="text-lg font-semibold mt-2">{{ card.title }}</h3>
-        <p class="text-gray-600">{{ card.subtitle }}</p>
+        <ProgressCircle :percentage="card.percentage" />
+        <!-- <p class="text-gray-600">{{ card.subtitle }}</p> -->
       </div>
     </div>
   </template>
@@ -29,16 +29,5 @@
   }
   </script>
   
-  <style scoped>
-  .circular-chart {
-    width: 100%; /* Adjust to control size of the circle */
-    max-width: 150px; /* Maximum size */
-  }
-  .circle-bg {
-    stroke: #eee; /* Background circle color */
-  }
-  .circle {
-    transition: stroke-dasharray 0.6s ease; /* Animation effect */
-  }
-  </style>
+
   
