@@ -48,6 +48,4 @@ export default {
  @click 또는 v-on:click : 클릭 이벤트 처리
  =>@click = "search"는 사용자가 버튼을 클릭하면 search 메소드 호출함
 
- computed properties, Watchers, Lifecycle hooks : 뷰 컴포넌트에서 데이터 변화를 감지하거나 특정 시점에 코드를 실행할 수 있게 해주는 다양한 옵션 제공
-
--->
+ computed properties, Watchers, Lifecycle hooks : 뷰 컴포넌트에서 데이터 변화를 감지하거나 특정 시점에 코드를 실행할 수 있게 해주는 다양한 옵션 제공 -->
