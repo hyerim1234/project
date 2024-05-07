@@ -1,12 +1,5 @@
 <template>
   <div>
-    <!-- <input
-      type="search"
-      name=""
-      id=""
-      @keyup="checkEnter($event)"
-      v-model="searchText"
-    /> -->
     <input
       type="search"
       name=""
