@@ -1,6 +1,6 @@
 <template>
   <div class="bg-[#f2f4f7] min-h-screen">
-    <nav class="flex space-x-4 bg-[#0b2549] pt-4 pl-8 ">
+    <nav class="flex space-x-4 bg-[#0b2549] pt-4 pl-8">
       <a v-for="tab in tabs" :key="tab"
          :class="['py-2 px-4 text-sm font-medium text-center cursor-pointer',
                   currentTab === tab ? 'bg-[#f2f4f7] text-[#0b2549] font-bold rounded-t-lg' : 'text-gray-600 border-transparent']"
@@ -13,7 +13,7 @@
     <div v-if="currentTab === '고객사 관리'" class="bg-[#f2f4f7]">
       <!-- '고객사 관리' 탭의 내용을 검사하고, 데이터가 없으면 메시지 표시 -->
       <div v-if="!hasCustomerData">
-        <div  class="max-h-screen p-20">
+        <div  class="max-h-[600px] p-10">
           <CommonView/>
         </div>
       </div>
