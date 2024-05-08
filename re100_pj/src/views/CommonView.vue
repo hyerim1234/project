@@ -70,11 +70,10 @@
     </div>
 
     <div class="absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center">
+      데이터가 존재하지 않습니다.
       <img :src="imagePath" alt="No data available">
-     정보가 없습니다.
     </div>
   </div>
-
 
 </template>
 
