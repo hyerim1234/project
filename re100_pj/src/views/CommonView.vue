@@ -7,7 +7,7 @@
         <!-- First form for country selection -->
         <form class="max-w-sm ">
           <select id="countries" class="border border-gray-300 text-grey-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-            <option selected>Choose a country</option>
+            <option selected>조건</option>
             <option value="US">United States</option>
             <option value="CA">Canada</option>
             <option value="FR">France</option>
@@ -18,7 +18,7 @@
         <!-- Second form for country selection -->
         <form class="max-w-sm">
           <select id="countries" class="border border-gray-300 text-grey-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-            <option selected>Choose a country</option>
+            <option selected>조건</option>
             <option value="US">United States</option>
             <option value="CA">Canada</option>
             <option value="FR">France</option>
@@ -48,9 +48,8 @@
               </ul>
             </div>
 
-
             <div class="relative w-full">
-              <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Search" required />
+              <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="내용" required />
               <button type="submit" class="absolute top-0 right-0 p-2.5  text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white-100">
                 검색
                 <!-- <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -98,6 +97,6 @@ export default {
 
   closeModal() {
       this.$emit('close');
-    }
+  }
 }
 </script>
