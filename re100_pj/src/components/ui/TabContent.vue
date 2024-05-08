@@ -34,12 +34,14 @@ export default {
     CommonView
   },
   data() {
-    return {
-      currentTab: '고객사 관리',
-      tabs: ['고객사 관리', '발전소 관리', '발전소 할당'],
-      hasCustomerData: false // 고객사 관리 데이터의 유무
-    };
-  }
+  return {
+    showModal: false,  // 초기값으로 showModal을 false로 설정
+    currentTab: '고객사 관리',
+    tabs: ['고객사 관리', '발전소 관리', '발전소 할당'],
+    hasCustomerData: false
+  };
+}
+
 }
 </script>
 
@@ -47,6 +49,5 @@ export default {
 /* 필요에 따른 스타일 추가 */
 body{
   background: #f2f4f7;
-
 }
 </style>

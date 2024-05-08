@@ -17,7 +17,6 @@
 
     <div v-else-if="currentTab === '관리'">
       <TabContent></TabContent>
-
     </div>
   </div>
 </template>
