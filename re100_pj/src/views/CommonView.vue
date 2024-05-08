@@ -1,0 +1,88 @@
+<template>
+  <div class="bg-[#ffff] min-h-[800px] rounded-2xl">
+    <div  class="flex justify-between align-content-center bg-[#ffff] p-20 rounded-2xl">
+      <h1 class="text-lg font-bold">고객사 관리</h1>
+
+      <div class="flex space-x-4 justify-end">
+        <!-- First form for country selection -->
+        <form class="max-w-sm ">
+          <select id="countries" class="border border-gray-300 text-grey-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <option selected>Choose a country</option>
+            <option value="US">United States</option>
+            <option value="CA">Canada</option>
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+          </select>
+        </form>
+
+        <!-- Second form for country selection -->
+        <form class="max-w-sm ">
+          <select id="countries" class="border border-gray-300 text-grey-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <option selected>Choose a country</option>
+            <option value="US">United States</option>
+            <option value="CA">Canada</option>
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+          </select>
+        </form>
+
+        <!-- Dropdown menu and search form -->
+        <form>
+          <div class="flex">
+            <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
+
+            <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Shopping</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Images</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">News</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Finance</a>
+                </li>
+              </ul>
+            </div>
+            <div class="relative w-full">
+              <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Search" required />
+              <button type="submit" class="absolute top-0 right-0 p-2.5 h-full text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white-100">
+                검색
+                <!-- <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg> -->
+              </button>
+
+            </div>
+            <button type="submit" class="mx-2 w-full text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white-100">
+                + 고객사 추가하기
+                <!-- <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg> -->
+             </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center">
+      <img :src="imagePath" alt="No data available">
+     정보가 없습니다.
+    </div>
+  </div>
+
+
+</template>
+<script>
+export default {
+  data() {
+    return {
+      // 이미지 경로를 데이터 속성으로 설정
+      imagePath: require('@/assets/data_none.svg')
+    };
+  }
+}
+</script>
