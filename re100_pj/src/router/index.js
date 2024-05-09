@@ -3,11 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
-// import MainView  from'../views/MainView.vue'
-// import CommonView from'../views/CommonView.vue'
-import ComplianceRateView from '@/views/ComplianceRateView.vue'
-import CommonView from '@/views/CommonView.vue'
-import MainView from '@/views/MainView.vue'
+import CommonView from '@/views/manage/CommonView.vue'
+import ComplianceRateView from '@/views/rate/ComplianceRateView.vue'
+
 // 라우터 설정
 // path : 새 페이지 URL 정의 , name: 라우터 이름 정의  component : 새 페이지 컴포넌트 정의
 const routes = [
@@ -27,18 +25,13 @@ const routes = [
     component: LoginView
   },
   {
-    path: '/main',
-    name: 'main',
-    component: MainView
-  },
-  {
-    path: '/Common',
-    name: 'Common',
+    path: '/common',
+    name: 'common',
     component: CommonView
   },
   {
-    path: '/Compliance',
-    name: 'Compliance',
+    path: '/compliance',
+    name: 'compliance',
     component: ComplianceRateView
   }
 ]
@@ -55,8 +48,3 @@ const router = createRouter({
 })
 
 export default router
-
-// ** 총정리 **
-// 이 설정은 라우터 초기화하고 routes 배열을 사용하여 각 경로에 해당하는 뷰 컴포넌트 지정함.
-// 설정된 이 라우터는 vue 애플리케이션 인스턴스에 플러그인으로 추가되어 , 애플리케이션 전반에 걸쳐 라우팅 관리 담당
-// 이를 통해 spa 에서 사용자의 url 변경에 따라 적절한 컴포넌트 렌더링 가능하도록 구성됨.

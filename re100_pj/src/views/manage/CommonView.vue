@@ -1,7 +1,7 @@
 <template>
   <div class="bg-[#ffff] min-h-[800px] rounded-2xl">
     <div  class="flex justify-between align-content-center bg-[#ffff] p-20 rounded-2xl">
-      <h1 class="text-lg font-bold">고객사 관리</h1>
+      <h1 class="text-lg font-bold">{{ title }} </h1>
 
       <div class="flex space-x-4 justify-end">
         <!-- First form for country selection -->
@@ -89,8 +89,8 @@ export default {
     return {
       // 이미지 경로를 데이터 속성으로 설정
       imagePath: require('@/assets/data_none.svg'),
-      showModal: false // 모달 창 표시 상태를 관리하는 데이터
-
+      showModal: false ,// 모달 창 표시 상태를 관리하는 데이터
+      tabs: ['고객사 관리', '발전소 관리', '발전소 할당']
     }
   },
 

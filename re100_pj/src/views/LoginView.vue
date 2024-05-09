@@ -16,7 +16,7 @@
           <label for="userPassword" class="text-sm mx-1">자동로그인</label>
           <a href="" class="float-right text-blue-500 text-sm">비밀번호 찾기</a>
           <button type="submit"
-                  @click="goToMainPage" 
+                  @click="goToMainPage"
                   class="my-4 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-blue active:bg-blue-700 transition duration-150 ease-in-out">
             로그인
           </button>
@@ -32,22 +32,22 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       userId: '',
       userPassword: ''
-    };
+    }
   },
   methods: {
-    goToMainPage() {
+    goToMainPage () {
       // '/main'은 메인 페이지의 라우트 경로입니다.
-      this.$router.push('/main');
+      this.$router.push('/main')
     },
-    loginSubmit() {
+    loginSubmit () {
       const saveData = {
         userId: this.userId,
         userPassword: this.userPassword
-      };
+      }
 
       // 로그인 요청을 보내는 axios 호출
       this.$axios.post('/signin', JSON.stringify(saveData), {
@@ -105,6 +105,6 @@ export default {
     left: 15%;
     margin-top:-4px;
     position: absolute;
-  
+
   }
 </style>

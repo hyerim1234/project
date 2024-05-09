@@ -8,7 +8,7 @@
             a 15.9155 15.9155 0 0 1 0 31.831
             a 15.9155 15.9155 0 0 1 0 -31.831"
           fill="none" stroke="#eee" stroke-width="2.8" />
-        
+
         <!-- 진행 원 -->
         <path class="circle"
           stroke-dasharray="56, 100"
@@ -33,5 +33,3 @@ export default {
   }
 }
 </script>
-
-

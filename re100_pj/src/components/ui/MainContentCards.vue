@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ProgressCircle from '@/components/widget/ProgressCircle.vue'
+import ProgressCircle from '@/components/chart/ProgressCircle.vue'
 
 export default {
   components: {

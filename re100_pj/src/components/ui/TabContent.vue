@@ -18,16 +18,23 @@
         </div>
       </div>
       <!-- 데이터가 있으면 데이터를 표시하는 컴포넌트 렌더링 -->
-      <div v-else>
-
-      </div>
+    </div>
+    <div v-else-if ="currentTab === '발전소 관리'">
+      <div  class="max-h-[600px] p-10">
+          <CommonView/>
+        </div>
+    </div>
+    <div v-else-if ="currentTab === '발전소 할당'">
+      <div  class="max-h-[600px] p-10">
+          <CommonView/>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
 // 가정: CommonView 컴포넌트가 존재하고, 이를 가져옵니다.
-import CommonView from '@/views/CommonView.vue'
+import CommonView from '@/views/manage/CommonView.vue'
 
 export default {
   components: {
@@ -35,10 +42,24 @@ export default {
   },
   data () {
     return {
-    showModal: false,
-   currentTab: '고객사 관리',
-    tabs: ['고객사 관리', '발전소 관리', '발전소 할당'],
-    hasCustomerData: false
+      showModal: false,
+      currentTab: '고객사 관리',
+      tabs: ['고객사 관리', '발전소 관리', '발전소 할당'],
+      hasCustomerData: false
+    }
+  },
+  computed: {
+    title () {
+      switch (this.currentTab) {
+        case '고객사 관리':
+          return '고객사 관리'
+        case '발전소 관리':
+          return '발전소 관리'
+        case '발전소 할당':
+          return '발전소 할당'
+        default:
+          return '타이틀 없음'
+      }
     }
   }
 

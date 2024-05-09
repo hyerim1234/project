@@ -21,13 +21,13 @@
   </template>
 
 <script>
-import ProgressCircle from '@/components/widget/ProgressCircle.vue'
+import ProgressCircle from '@/components/chart/ProgressCircle.vue'
 
 export default {
   components: {
     ProgressCircle
   },
-  data() {
+  data () {
     return {
       currentTab: '관리',
       tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired'],

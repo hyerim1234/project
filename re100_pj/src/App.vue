@@ -20,11 +20,11 @@
 <script>
 import HeaderLayoutVue from '@/components/layouts/HeaderLayout.vue'
 import FooterLayoutVue from '@/components/layouts/FooterLayout.vue'
-import EnergyTable from '@/components/widget/EnergyTable.vue'
-import ComplianceRateView from '@/views/ComplianceRateView.vue'
+import EnergyTable from '@/components/ui/EnergyTable.vue'
+import ComplianceRateView from '@/views/rate/ComplianceRateView.vue'
 import MainContentCardsVue from '@/components/ui/MainContentCards.vue'
 import TabContent from '@/components/ui/TabContent.vue'
-import CommonView from '@/views/CommonView.vue'
+import CommonView from '@/views/manage/CommonView.vue'
 
 export default {
   components: {
