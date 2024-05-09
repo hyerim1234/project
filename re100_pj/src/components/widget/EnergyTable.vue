@@ -12,7 +12,7 @@
           <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">위치</th>
         </tr>
       </thead>
-      
+
       <tbody class="bg-white divide-y divide-gray-200">
         <tr @click="toggleDetails" class="cursor-pointer">
           <td>
@@ -47,12 +47,11 @@
 
               <tbody>
                 <tr @click="toggleDetails" class="cursor-pointer">
-                
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ item2.name }}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item2.count }}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item2.status }}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item2.type }}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item2.amount }}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ item2.name }}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item2.count }}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item2.status }}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item2.type }}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item2.amount }}</td>
               </tr>
               </tbody>
             </table>
