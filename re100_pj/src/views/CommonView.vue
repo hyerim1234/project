@@ -78,24 +78,24 @@
 </template>
 
 <script>
-import ModalInput from '@/components/ui/ModalInput.vue';
+import ModalInput from '@/components/ui/ModalInput.vue'
 
 export default {
   components: {
     ModalInput
   },
 
-  data() {
+  data () {
     return {
       // 이미지 경로를 데이터 속성으로 설정
       imagePath: require('@/assets/data_none.svg'),
-      showModal: false , // 모달 창 표시 상태를 관리하는 데이터
+      showModal: false // 모달 창 표시 상태를 관리하는 데이터
 
-    };
+    }
   },
 
-  closeModal() {
-      this.$emit('close');
+  closeModal () {
+    this.$emit('close')
   }
 }
 </script>

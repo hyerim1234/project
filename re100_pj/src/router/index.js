@@ -3,10 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
-import MainView from'../views/MainView.vue'
-import CommonView from'../views/CommonView.vue'
-
-
+// import MainView  from'../views/MainView.vue'
+// import CommonView from'../views/CommonView.vue'
+import ComplianceRateView from '@/views/ComplianceRateView.vue'
+import CommonView from '@/views/CommonView.vue'
+import MainView from '@/views/MainView.vue'
 // 라우터 설정
 // path : 새 페이지 URL 정의 , name: 라우터 이름 정의  component : 새 페이지 컴포넌트 정의
 const routes = [
@@ -34,6 +35,11 @@ const routes = [
     path: '/Common',
     name: 'Common',
     component: CommonView
+  },
+  {
+    path: '/Compliance',
+    name: 'Compliance',
+    component: ComplianceRateView
   }
 ]
 

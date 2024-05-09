@@ -1,43 +1,50 @@
 <template>
-  <div class="bg-[#f2f4f7]">
-    <nav class="flex space-x-4 bg-[#0b2549] py-4">
-      <a v-for="tab in tabs" :key="tab"
-         :class="['py-2 px-4 text-sm font-medium text-center rounded-full cursor-pointer',
-                  currentTab === tab ? 'bg-blue-600 text-white-100 rounded-full' : 'text-gray-600 border-transparent']"
-         @click="currentTab = tab">
-        {{ tab }}
-      </a>
-    </nav>
-
-    <!-- 조건부 렌더링을 사용한 컴포넌트 표시 -->
-    <div v-if="currentTab === '실시간 정보'">
-      <main-content-cards-vue></main-content-cards-vue>
-      <energy-table></energy-table>
-    </div>
-
-    <div v-else-if="currentTab === '관리'">
-      <TabContent></TabContent>
-    </div>
+  <HeaderLayoutVue @tab-selected="handleTabChange"/>
+  <div v-if="currentTab === '실시간 정보'">
+    <main-content-cards-vue/>
+    <EnergyTable/>
   </div>
+  <div v-else-if="currentTab === '이행률'">
+    <ComplianceRateView/>
+  </div>
+  <div v-else-if="currentTab === '관리'">
+    <TabContent/>
+  </div>
+
+  <div v-else-if="currentTab === '설정'">
+    <EnergyTable/>
+  </div>
+  <FooterLayoutVue/>
 </template>
 
 <script>
-import MainContentCardsVue from '@/components/ui/MainContentCards.vue';
-import EnergyTable from '@/components/widget/EnergyTable.vue';
-import TabContent from '@/components/ui/TabContent.vue';
+import HeaderLayoutVue from '@/components/layouts/HeaderLayout.vue'
+import FooterLayoutVue from '@/components/layouts/FooterLayout.vue'
+import EnergyTable from '@/components/widget/EnergyTable.vue'
+import ComplianceRateView from '@/views/ComplianceRateView.vue'
+import MainContentCardsVue from '@/components/ui/MainContentCards.vue'
+import TabContent from '@/components/ui/TabContent.vue'
+import CommonView from '@/views/CommonView.vue'
 
 export default {
   components: {
-    MainContentCardsVue,
+    HeaderLayoutVue,
+    FooterLayoutVue,
     EnergyTable,
-    TabContent
+    MainContentCardsVue,
+    ComplianceRateView,
+    TabContent,
+    CommonView
   },
-
-  data() {
+  data () {
     return {
-      currentTab: '실시간 정보',
-      tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired']
-    };
+      currentTab: '관리' // 애플리케이션 로드 시 '실시간 정보' 탭이 기본적으로 선택되도록 설정
+    }
+  },
+  methods: {
+    handleTabChange (tab) {
+      this.currentTab = tab
+    }
   }
 }
 </script>

@@ -8,13 +8,10 @@
         {{ tab }}
       </a>
     </nav>
-
   </div>
 </template>
 
 <script>
-
-
 
 export default {
   components: {
@@ -23,9 +20,7 @@ export default {
     return {
       currentTab: '실시간 정보',
       tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired']
-    };
+    }
   }
 }
 </script>
-
-

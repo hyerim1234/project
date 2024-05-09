@@ -5,10 +5,11 @@ import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import DataBindingAttributeView from '@/views/1_databinding/DataBindingAttributeView.vue'
 import EventChangeView from '@/views/2_event/EventChangeView.vue'
-import EventClickView  from '@/views/2_event/EventClickView.vue'
+import EventClickView from '@/views/2_event/EventClickView.vue'
 import RenderingIfView from '@/views/3_extra/RenderingIfView.vue'
 import ComputedView from '@/views/3_extra/ComputedView'
 import WatchView from '@/views/3_extra/WatchView'
+import SlotView from '@/views/4_reuse/SlotView'
 
 // 라우터 설정
 // path : 새 페이지 URL 정의 , name: 라우터 이름 정의  component : 새 페이지 컴포넌트 정의
@@ -57,6 +58,11 @@ const routes = [
     path: '/extra/watch',
     name: 'WatchView',
     component: WatchView
+  },
+  {
+    path: '/reuse/slot',
+    name: 'slot',
+    component: SlotView
   }
 ]
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#f2f4f7] min-h-screen">
+  <div class="bg-[#f2f4f7] min-h-screen mt-[-180px]">
     <nav class="flex space-x-4 bg-[#0b2549] pt-4 pl-8">
       <a v-for="tab in tabs" :key="tab"
          :class="['py-2 px-4 text-sm font-medium text-center cursor-pointer',
@@ -27,20 +27,20 @@
 
 <script>
 // 가정: CommonView 컴포넌트가 존재하고, 이를 가져옵니다.
-import CommonView from '@/views/CommonView.vue';
+import CommonView from '@/views/CommonView.vue'
 
 export default {
   components: {
     CommonView
   },
-  data() {
-  return {
-    showModal: false,  // 초기값으로 showModal을 false로 설정
-    currentTab: '고객사 관리',
+  data () {
+    return {
+    showModal: false,
+   currentTab: '고객사 관리',
     tabs: ['고객사 관리', '발전소 관리', '발전소 할당'],
     hasCustomerData: false
-  };
-}
+    }
+  }
 
 }
 </script>

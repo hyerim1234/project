@@ -20,25 +20,24 @@
     </div>
   </template>
 
-  <script>
-  import ProgressCircle from '@/components/widget/ProgressCircle.vue';
+<script>
+import ProgressCircle from '@/components/widget/ProgressCircle.vue'
 
-  export default {
-    components: {
-      ProgressCircle
-    },
-    data() {
-      return {
-        currentTab: '관리',
-        tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired'],
-        cards: [
-          { title: "RE100 이행률", subtitle: "56%", percentage: 56 },
-          { title: "이행현황", subtitle: "20개", percentage: 56 },
-          { title: "전력 사용량", subtitle: "300.3 MW", percentage: 25 },
-          { title: "발전소 개소수", subtitle: "20개", percentage: 56 }
-        ]
-      };
+export default {
+  components: {
+    ProgressCircle
+  },
+  data() {
+    return {
+      currentTab: '관리',
+      tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired'],
+      cards: [
+        { title: "RE100 이행률", subtitle: "56%", percentage: 56 },
+        { title: "이행현황", subtitle: "20개", percentage: 56 },
+        { title: "전력 사용량", subtitle: "300.3 MW", percentage: 25 },
+        { title: "발전소 개소수", subtitle: "20개", percentage: 56}
+      ]
     }
   }
-  </script>
-
+}
+</script>
