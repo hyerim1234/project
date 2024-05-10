@@ -19,7 +19,7 @@ export default {
   data () {
     return {
       currentTab: '실시간 정보',
-      tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired']
+      tabs: ['실시간 정보', '이행률', '관리', '설정']
     }
   }
 }

@@ -33,7 +33,7 @@
       </div>
       <div v-else-if="hasCustomerData">
         <div  class="max-h-[600px] p-10">
-          <energy-table></energy-table>
+          <arrange-plant-view></arrange-plant-view>
         </div>
       </div>
     </div>
@@ -58,12 +58,14 @@
 import CommonView from '@/views/manage/CommonView.vue'
 import EnergyTable from './EnergyTable.vue'
 import PlantAlloView from '@/views/manage/PlantAlloView.vue'
+import ArrangePlantView from '@/views/manage/ArrangePlantView.vue'
 
 export default {
   components: {
     CommonView,
     EnergyTable,
-    PlantAlloView
+    PlantAlloView,
+    ArrangePlantView
   },
   data () {
     return {

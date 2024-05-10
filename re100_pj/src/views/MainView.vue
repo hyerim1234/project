@@ -1,14 +1,14 @@
 <template>
     <div class="bg-[#f2f4f7]">
       <!-- Header Section -->
-      <nav class="flex space-x-4 bg-[#0b2549]">
+      <!-- <nav class="flex space-x-4 bg-[#0b2549]">
         <a v-for="tab in tabs" :key="tab"
            :class="['py-2 px-4 text-sm font-medium text-center rounded-full cursor-pointer',
                     currentTab === tab ? 'bg-blue-600 text-white rounded-full' : 'text-gray-600 border-transparent']"
            @click="currentTab = tab">
           {{ tab }}
         </a>
-      </nav>
+      </nav> -->
       <!-- Main Content Section -->
       <div class="flex flex-wrap justify-between items-center gap-6  bg-gray-50">
         <div v-for="card in cards" :key="card.title" class="bg-white rounded-lg shadow-md  flex flex-col items-center">
@@ -29,8 +29,8 @@ export default {
   },
   data () {
     return {
-      currentTab: '관리',
-      tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired'],
+      // currentTab: '',
+      // tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired'],
       cards: [
         { title: "RE100 이행률", subtitle: "56%", percentage: 56 },
         { title: "이행현황", subtitle: "20개", percentage: 56 },

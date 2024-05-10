@@ -1,20 +1,23 @@
 <template>
-  <HeaderLayoutVue @tab-selected="handleTabChange"/>
-  <div v-if="currentTab === '실시간 정보'">
-    <main-content-cards-vue/>
-    <EnergyTable/>
-  </div>
-  <div v-else-if="currentTab === '이행률'">
-    <ComplianceRateView/>
-  </div>
-  <div v-else-if="currentTab === '관리'">
-    <TabContent/>
-  </div>
+  <nav class="bg-[#0B2249] h-[354px]">
+    <!-- Header Layout with tab selection event -->
+    <HeaderLayoutVue @tab-selected="handleTabChange"/>
 
-  <div v-else-if="currentTab === '설정'">
-    <EnergyTable/>
-  </div>
-  <FooterLayoutVue/>
+    <div v-if="currentTab === '실시간 정보'">
+      <MainContentCardsVue/>
+      <EnergyTable/>
+    </div>
+    <div v-else-if="currentTab === '이행률'">
+      <ComplianceRateView/>
+    </div>
+    <div v-else-if="currentTab === '관리'">
+      <TabContent/>
+    </div>
+    <div v-else-if="currentTab === '설정'">
+      <ComplianceRateView/>
+    </div>
+    <FooterLayoutVue/>
+  </nav>
 </template>
 
 <script>
@@ -38,17 +41,19 @@ export default {
   },
   data () {
     return {
-      currentTab: '관리' // 애플리케이션 로드 시 '실시간 정보' 탭이 기본적으로 선택되도록 설정
+      currentTab: '실시간 정보', // 초기 탭 설정
+      //tabs: ['실시간 정보', '이행률', '관리', '설정']
     }
   },
+  // 예를 들어, HeaderLayoutVue에서 탭을 클릭했을 때 다음과 같은 메소드가 호출됩니다.
   methods: {
+    // onTabClick (tabName) {
+    //   console.log(tabName)
+    //   this.$emit('tab-selected', tabName)
+    // }
     handleTabChange (tab) {
       this.currentTab = tab
     }
   }
 }
 </script>
-
-<style scoped>
-/* Tailwind CSS is utility-first, so most styling is done in the template via class bindings */
-</style>
