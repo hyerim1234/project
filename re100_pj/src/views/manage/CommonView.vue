@@ -5,7 +5,7 @@
 
       <div class="flex space-x-4 justify-end">
         <!-- First form for country selection -->
-        <form class="max-w-sm ">
+        <form class="max-w-sm">
           <select id="countries" class="border border-gray-300 text-grey-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             <option selected>조건</option>
             <option value="US">United States</option>
@@ -89,7 +89,7 @@ export default {
     return {
       // 이미지 경로를 데이터 속성으로 설정
       imagePath: require('@/assets/data_none.svg'),
-      showModal: false ,// 모달 창 표시 상태를 관리하는 데이터
+      showModal: false, // 모달 창 표시 상태를 관리하는 데이터
       tabs: ['고객사 관리', '발전소 관리', '발전소 할당']
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow rounded-lg pt-10">
+  <div class="bg-white shadow rounded-lg">
     <table class="min-w-full divide-y divide-gray-200">
       <thead class="bg-gray-50">
         <tr>
@@ -64,29 +64,29 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       showDetails: false,
       item: {
-        name: '이름', 
-        count: '300MW', 
-        capacity: '76%', 
-        type: '자가소비 (종량)', 
-        achievement: '50%', 
+        name: '이름',
+        count: '300MW',
+        capacity: '76%',
+        type: '자가소비 (종량)',
+        achievement: '50%',
         location: '자가소비 (종량)'
       },
       item2: {
-        name: '이름', 
-        count: '300MW', 
-        status: '가동%', 
-        amount: '300MW', 
+        name: '이름',
+        count: '300MW',
+        status: '가동%',
+        amount: '300MW',
         type: '역송병렬%'
       }
-    };
+    }
   },
   methods: {
-    toggleDetails() {
-      this.showDetails = !this.showDetails;
+    toggleDetails () {
+      this.showDetails = !this.showDetails
     }
   }
 }

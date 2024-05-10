@@ -13,21 +13,42 @@
     <div v-if="currentTab === '고객사 관리'" class="bg-[#f2f4f7]">
       <!-- '고객사 관리' 탭의 내용을 검사하고, 데이터가 없으면 메시지 표시 -->
       <div v-if="!hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div class="max-h-[600px] p-10">
           <CommonView/>
         </div>
       </div>
       <!-- 데이터가 있으면 데이터를 표시하는 컴포넌트 렌더링 -->
+      <div v-else-if="hasCustomerData">
+        <div  class="max-h-[600px] p-10">
+          <energy-table></energy-table>
+        </div>
+      </div>
     </div>
+
     <div v-else-if ="currentTab === '발전소 관리'">
-      <div  class="max-h-[600px] p-10">
+      <div v-if="!hasCustomerData">
+        <div class="max-h-[600px] p-10">
           <CommonView/>
         </div>
+      </div>
+      <div v-else-if="hasCustomerData">
+        <div  class="max-h-[600px] p-10">
+          <energy-table></energy-table>
+        </div>
+      </div>
     </div>
+
     <div v-else-if ="currentTab === '발전소 할당'">
-      <div  class="max-h-[600px] p-10">
+      <div v-if="!hasCustomerData">
+        <div class="max-h-[600px] p-10">
           <CommonView/>
         </div>
+      </div>
+      <div v-else-if="hasCustomerData">
+        <div  class="max-h-[600px] p-10">
+          <plant-allo-view></plant-allo-view>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -35,17 +56,21 @@
 <script>
 // 가정: CommonView 컴포넌트가 존재하고, 이를 가져옵니다.
 import CommonView from '@/views/manage/CommonView.vue'
+import EnergyTable from './EnergyTable.vue'
+import PlantAlloView from '@/views/manage/PlantAlloView.vue'
 
 export default {
   components: {
-    CommonView
+    CommonView,
+    EnergyTable,
+    PlantAlloView
   },
   data () {
     return {
       showModal: false,
       currentTab: '고객사 관리',
       tabs: ['고객사 관리', '발전소 관리', '발전소 할당'],
-      hasCustomerData: false
+      hasCustomerData: true
     }
   },
   computed: {

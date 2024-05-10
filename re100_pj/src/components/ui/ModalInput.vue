@@ -1,10 +1,11 @@
 <template>
   <div class="fixed inset-0 bg-[#ffffff] bg-opacity-95 flex justify-center items-center z-50">
+    <h1>고객사 추가</h1>
     <div class="bg-gray-100 p-6 rounded-lg shadow-xl max-w-2xl w-full">
       <form @submit.prevent="save">
         <div class="space-y-4 pt-5">
           <div class="flex align-items-center justify-between ">
-            <label for="name" class="block text-sm font-semibold text-gray-700 mt-2">이름</label>
+            <label for="name" class="block text-sm font-semibold text-gray-700 mt-2">고객사 명</label>
             <input type="text" id="name" v-model="formData.name" class="mt-1 block w-10/12 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="고객사 이름 입력">
           </div>
 
@@ -22,6 +23,14 @@
             <label for="email" class="block text-sm font-semibold text-gray-700 mt-2">메일 주소</label>
             <input type="email" id="email" v-model="formData.email" class="mt-1 block w-10/12 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="이메일 주소 입력">
           </div>
+          <div class="flex align-items-center justify-between ">
+            <label for="email" class="block text-sm font-semibold text-gray-700 mt-2">발전소 개수</label>
+            <input type="email" id="email" v-model="formData.email" class="mt-1 block w-10/12 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="이메일 주소 입력">
+          </div>
+          <div class="flex align-items-center justify-between ">
+            <label for="email" class="block text-sm font-semibold text-gray-700 mt-2">총 용량</label>
+            <input type="email" id="email" v-model="formData.email" class="mt-1 block w-10/12 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="이메일 주소 입력">
+          </div>
         </div>
 
         <div class="mt-6 flex justify-end space-x-3 text-white-100">
@@ -35,7 +44,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       formData: {
         name: '',
@@ -43,16 +52,16 @@ export default {
         phone: '',
         email: ''
       }
-    };
+    }
   },
   methods: {
-    close() {
-      this.$emit('close');
+    close () {
+      this.$emit('close')
     },
-    save() {
+    save () {
       // Save logic here
-      console.log("Saved", this.formData);
-      this.close();
+      console.log("Saved", this.formData)
+      this.close()
     }
   }
 }
