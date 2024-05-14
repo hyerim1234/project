@@ -27,7 +27,7 @@
     <div v-else-if ="currentTab === '고객목록보기'">
       <div v-if="!hasCustomerData">
         <div class="max-h-[600px] p-10">
-          <CommonView/>
+          <!-- <CommonView/> -->
         </div>
       </div>
       <div v-else-if="hasCustomerData">
