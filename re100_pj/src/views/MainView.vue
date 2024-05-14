@@ -9,6 +9,7 @@
           {{ tab }}
         </a>
       </nav> -->
+
       <!-- Main Content Section -->
       <div class="flex flex-wrap justify-between items-center gap-6  bg-gray-50">
         <div v-for="card in cards" :key="card.title" class="bg-white rounded-lg shadow-md  flex flex-col items-center">

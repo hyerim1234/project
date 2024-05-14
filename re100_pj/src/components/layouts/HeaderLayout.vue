@@ -47,7 +47,7 @@ export default {
   props: ['selectTab'], // 부모 컴포넌트에서 전달받은 selectTab 함수
   data () {
     return {
-      currentTab: '관리',
+      currentTab: '실시간 정보',
       showMenu: false,
       tabs: ['실시간 정보', '이행률', '관리', '설정']
     }

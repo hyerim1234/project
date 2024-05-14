@@ -7,6 +7,7 @@ import CommonView from '@/views/manage/CommonView.vue'
 import ComplianceRateView from '@/views/rate/ComplianceRateView.vue'
 import PlantAlloView from '@/views/manage/PlantAlloView.vue'
 import ArrangePlantView from '@/views/manage/ArrangePlantView.vue'
+import SettingView from '@/views/setting/SettingView.vue'
 
 // 라우터 설정
 // path : 새 페이지 URL 정의 , name: 라우터 이름 정의  component : 새 페이지 컴포넌트 정의
@@ -32,7 +33,7 @@ const routes = [
     component: CommonView
   },
   {
-    path: '/compliance',
+    path: '/rate/compliance',
     name: 'compliance',
     component: ComplianceRateView
   },
@@ -45,6 +46,11 @@ const routes = [
     path: '/manage/arrange',
     name: 'arrange',
     component: ArrangePlantView
+  },
+  {
+    path: '/setting',
+    name: 'setting',
+    component: SettingView
   }
 ]
 

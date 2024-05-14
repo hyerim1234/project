@@ -14,7 +14,7 @@
       <TabContent/>
     </div>
     <div v-else-if="currentTab === '설정'">
-      <ComplianceRateView/>
+     <setting-view></setting-view>
     </div>
     <FooterLayoutVue/>
   </nav>
@@ -28,6 +28,7 @@ import ComplianceRateView from '@/views/rate/ComplianceRateView.vue'
 import MainContentCardsVue from '@/components/ui/MainContentCards.vue'
 import TabContent from '@/components/ui/TabContent.vue'
 import CommonView from '@/views/manage/CommonView.vue'
+import SettingView from './views/setting/SettingView.vue'
 
 export default {
   components: {
@@ -37,12 +38,13 @@ export default {
     MainContentCardsVue,
     ComplianceRateView,
     TabContent,
-    CommonView
+    CommonView,
+    SettingView
   },
   data () {
     return {
-      currentTab: '실시간 정보', // 초기 탭 설정
-      //tabs: ['실시간 정보', '이행률', '관리', '설정']
+      currentTab: '실시간 정보'// 초기 탭 설정
+     //tabs: ['실시간 정보', '이행률', '관리', '설정']
     }
   },
   // 예를 들어, HeaderLayoutVue에서 탭을 클릭했을 때 다음과 같은 메소드가 호출됩니다.

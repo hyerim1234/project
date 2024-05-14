@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import SectionHeading from '@/components/ui/SectionHeading.vue';
+// import SectionHeading from '@/components/ui/SectionHeading.vue'
 
-export default {
-    components: {
-       SectionHeading
-    }
-}
+// export default {
+//     components: {
+//        SectionHeading
+//     }
+// }
 </script>

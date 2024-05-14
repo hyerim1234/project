@@ -16,7 +16,6 @@
           <label for="userPassword" class="text-sm mx-1">자동로그인</label>
           <a href="" class="float-right text-blue-500 text-sm">비밀번호 찾기</a>
           <button type="submit"
-                  @click="goToMainPage"
                   class="my-4 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-blue active:bg-blue-700 transition duration-150 ease-in-out">
             로그인
           </button>
@@ -39,29 +38,25 @@ export default {
     }
   },
   methods: {
-    goToMainPage () {
-      // '/main'은 메인 페이지의 라우트 경로입니다.
-      this.$router.push('/main')
-    },
     loginSubmit () {
+      // 사용자 ID와 비밀번호 저장 객체 생성
       const saveData = {
         userId: this.userId,
         userPassword: this.userPassword
       }
-
-      // 로그인 요청을 보내는 axios 호출
-      this.$axios.post('/signin', JSON.stringify(saveData), {
+      // axios를 사용해서 '/main' 주소로 POST 요청 보내기
+      // 요청 본문은 JSON 형식으로 변환
+      this.$axios.post('/main', JSON.stringify(saveData), {
         headers: { 'Content-Type': 'application/json' }
       })
-      .then(response => {
-        if (response.status === 200) {
-          // 로그인 성공 후 메인 페이지로 리디렉션
-          this.$router.push('/main');
-        }
-      })
-      .catch(error => {
-        console.error('로그인 실패:', error);
-      });
+      // 응답이나 에러 처리는 없어서 성공 또는 실패에 대한 처리가 필요할듯
+      // .then(response => {
+      //   this.$router.push('/main')
+      // })
+      // .catch(error => {
+      //   console.error('로그인 실패:', error)
+      //   this.$router.push('/main')
+      // })
     }
   }
 }

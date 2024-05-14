@@ -2,7 +2,7 @@
   <div class="flex justify-center space-x-8 rounded-lg">
     <div class="flex-col space-x-4">
       <div class="bg-[#ffffff] flex-col  h-[770px] w-[624px] rounded-lg p-8 space-y-4">
-        <h1 class="font-medium text-lg">발전소 할당</h1>
+        <h1 class="font-medium text-lg"> 발전소 할당</h1>
         <div class="flex justify-between space-x-2">
           <!-- First form for country selection -->
           <form class="max-w-sm w-1/2">
