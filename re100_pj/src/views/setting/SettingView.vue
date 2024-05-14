@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#f2f4f7] min-h-screen mt-[-180px]">
+  <common-layout>
     <nav class="flex space-x-4 bg-[#0b2549] pt-4 pl-8">
       <a v-for="tab in tabs" :key="tab"
          :class="['py-2 px-4 text-sm font-medium text-center cursor-pointer',
@@ -32,29 +32,32 @@
       </div>
       <div v-else-if="hasCustomerData">
         <div  class="max-h-[600px] p-10">
-          <setting-user-list></setting-user-list>
+          <setting-user-list/>
         </div>
       </div>
     </div>
-  </div>
+  </common-layout>
+
 </template>
 
 <script>
 
 import SettingInfoUser from '@/components/tabs/SettingInfoUser.vue'
 import SettingUserList from '@/components/tabs/SettingUserList.vue'
+import CommonLayout from '@/components/layouts/CommonLayout.vue'
 // 가정: CommonView 컴포넌트가 존재하고, 이를 가져옵니다.
 
 export default {
   components: {
     SettingInfoUser,
-    SettingUserList
+    SettingUserList,
+    CommonLayout
   },
   data () {
     return {
       showModal: false,
       currentTab: '내정보수정',
-      tabs: ['내정보수정', '고객목록'],
+      tabs: ['내정보수정', '고객목록보기'],
       hasCustomerData: true
     }
   }

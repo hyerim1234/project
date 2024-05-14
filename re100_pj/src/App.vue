@@ -2,19 +2,18 @@
   <nav class="bg-[#0B2249] h-[354px]">
     <!-- Header Layout with tab selection event -->
     <HeaderLayoutVue @tab-selected="handleTabChange"/>
-
-    <div v-if="currentTab === '실시간 정보'">
+    <div v-if="currentTab === tabs.REAL_TIME_INFO">
       <MainContentCardsVue/>
       <EnergyTable/>
     </div>
-    <div v-else-if="currentTab === '이행률'">
+    <div v-else-if="currentTab === tabs.COMPLIANCE_RATE">
       <ComplianceRateView/>
     </div>
-    <div v-else-if="currentTab === '관리'">
+    <div v-else-if="currentTab === tabs.MANAGEMENT">
       <TabContent/>
     </div>
-    <div v-else-if="currentTab === '설정'">
-     <setting-view></setting-view>
+    <div v-else-if="currentTab === tabs.SETTINGS">
+      <SettingView/>
     </div>
     <FooterLayoutVue/>
   </nav>
@@ -28,7 +27,14 @@ import ComplianceRateView from '@/views/rate/ComplianceRateView.vue'
 import MainContentCardsVue from '@/components/ui/MainContentCards.vue'
 import TabContent from '@/components/ui/TabContent.vue'
 import CommonView from '@/views/manage/CommonView.vue'
-import SettingView from './views/setting/SettingView.vue'
+import SettingView from '@/views/setting/SettingView.vue'
+
+const TABS = {
+  REAL_TIME_INFO: '실시간 정보',
+  COMPLIANCE_RATE: '이행률',
+  MANAGEMENT: '관리',
+  SETTINGS: '설정'
+}
 
 export default {
   components: {
@@ -43,19 +49,18 @@ export default {
   },
   data () {
     return {
-      currentTab: '실시간 정보'// 초기 탭 설정
-     //tabs: ['실시간 정보', '이행률', '관리', '설정']
+      currentTab: TABS.REAL_TIME_INFO,
+      tabs: TABS // 초기 탭 설정 및 TABS 객체 포함
     }
   },
-  // 예를 들어, HeaderLayoutVue에서 탭을 클릭했을 때 다음과 같은 메소드가 호출됩니다.
   methods: {
-    // onTabClick (tabName) {
-    //   console.log(tabName)
-    //   this.$emit('tab-selected', tabName)
-    // }
     handleTabChange (tab) {
+      console.log('Tab changed to:', tab)
       this.currentTab = tab
     }
+  },
+  created () {
+    console.log('App created with initial tab:', this.currentTab)
   }
 }
 </script>
