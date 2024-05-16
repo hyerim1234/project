@@ -1,59 +1,71 @@
 <template>
-  <div class="p-6">
+  <div class="h-[800px] bg-[#ffffff] p-6 rounded-xl shadow-md mx-auto">
     <h1 class="text-lg font-bold">고객목록</h1>
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
-      <table class="w-full text-sm text-center text-gray-500">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-300">
-          <tr>
-            <th scope="col" class="px-6 py-3">고객목록</th>
-            <th scope="col" class="px-6 py-3">이메일주소</th>
-            <th scope="col" class="px-6 py-3">연락처</th>
-            <th scope="col" class="px-6 py-3">발전소 개수</th>
-            <th scope="col" class="px-6 py-3">총용량</th>
-            <th scope="col" class="px-6 py-3">생성일</th>
-            <th scope="col" class="px-6 py-3">비밀번호</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="bg-white border-b hover:bg-gray-50" v-for="(customer, index) in customers" :key="index">
-            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ customer.name }}</td>
-            <td class="px-6 py-4">{{ customer.email }}</td>
-            <td class="px-6 py-4">{{ customer.phone }}</td>
-            <td class="px-6 py-4">{{ customer.plants }}</td>
-            <td class="px-6 py-4">{{ customer.capacity }}</td>
-            <td class="px-6 py-4">{{ customer.created }}</td>
-            <td class="px-6 py-4">
-              <button @click="openPasswordModal" class="text-gray-800 font-bold text-lg-center hover:underline border border-2 border-blue-400 rounded-md p-2">
-                변경
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="overflow-hidden">
+      <div class="mt-8 overflow-y-auto h-[600px]">
+        <table class="text-gray-500 mx-auto min-w-[1712px]">
+          <thead class="text-gray-700 uppercase bg-gray-100 text-left sticky top-0">
+            <tr>
+              <th scope="col" class="px-3 py-3">고객목록</th>
+              <th scope="col" class="px-3 py-3">이메일주소</th>
+              <th scope="col" class="px-3 py-3 text-center">연락처</th>
+              <th scope="col" class="px-3 py-3 text-center">발전소 개수</th>
+              <th scope="col" class="px-3 py-3 text-center">총용량</th>
+              <th scope="col" class="px-3 py-3 text-center">생성일</th>
+              <th scope="col" class="px-3 py-3 text-center">비밀번호</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b hover:bg-gray-50 text-sm" v-for="(customer, index) in customers" :key="index">
+              <td class="px-3 py-2.5 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ customer.name }}</td>
+              <td class="px-3 py-2.5">{{ customer.email }}</td>
+              <td class="px-3 py-2.5 text-center">{{ customer.phone }}</td>
+              <td class="px-3 py-2.5 text-center">{{ customer.plants }}</td>
+              <td class="px-3 py-2.5 text-center">{{ customer.capacity }}</td>
+              <td class="px-3 py-2.5 text-center">{{ customer.created }}</td>
+              <td class="px-3 py-2.5 text-center">
+                <button @click="openPasswordModal" class="text-gray-800 font-bold text-lg-center hover:underline border border-2 border-blue-400 rounded-md p-2">
+                  변경
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- pagination -->
 
-      <nav class="flex items-center justify-between pt-4 mx-auto" aria-label="Table navigation">
-        <span class="text-sm font-normal text-gray-500">Showing <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span class="font-semibold text-gray-900 dark:text-white">100</span></span>
-        <ul class="inline-flex -space-x-px text-sm h-8">
+      <nav aria-label="Page navigation">
+        <ul class="flex items-center justify-center  mt-10">
           <li>
-            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+            <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700">
+              <span class="sr-only">Previous</span>
+              <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+              </svg>
+            </a>
           </li>
           <li>
-            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">1</a>
           </li>
           <li>
-            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
           </li>
           <li>
-            <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 leading-tight text-blue-600 bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+            <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700">3</a>
           </li>
           <li>
-            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">4</a>
           </li>
           <li>
-            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">5</a>
           </li>
           <li>
-            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700">
+              <span class="sr-only">Next</span>
+              <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+              </svg>
+            </a>
           </li>
         </ul>
       </nav>

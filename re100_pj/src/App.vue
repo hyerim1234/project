@@ -1,7 +1,8 @@
 <template>
-  <nav class="bg-[#0B2249] h-[354px]">
+  <div id="app" class="bg-[#f2f4f7] h-screen">
     <!-- Header Layout with tab selection event -->
     <HeaderLayoutVue @tab-selected="handleTabChange"/>
+
     <div v-if="currentTab === tabs.REAL_TIME_INFO">
       <MainContentCardsVue/>
       <EnergyTable/>
@@ -15,8 +16,9 @@
     <div v-else-if="currentTab === tabs.SETTINGS">
       <SettingView/>
     </div>
+
     <FooterLayoutVue/>
-  </nav>
+  </div>
 </template>
 
 <script>
@@ -37,6 +39,7 @@ const TABS = {
 }
 
 export default {
+  name: 'App',
   components: {
     HeaderLayoutVue,
     FooterLayoutVue,
@@ -64,3 +67,6 @@ export default {
   }
 }
 </script>
+<style>
+
+</style>

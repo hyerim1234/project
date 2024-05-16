@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-[#f2f4f7] min-h-screen mt-[-180px]">
-    <nav class="flex space-x-4 bg-[#0b2549] pt-4 pl-8">
+  <div class="bg-[#f2f4f7]">
+    <nav class="flex space-x-4 bg-[#0b2549] pt-4 pl-20  mt-[-160px]">
       <a v-for="tab in tabs" :key="tab"
          :class="['py-2 px-4 text-sm font-medium text-center cursor-pointer',
                   currentTab === tab ? 'bg-[#f2f4f7] text-[#0b2549] font-bold rounded-t-lg' : 'text-gray-600 border-transparent']"
@@ -13,13 +13,13 @@
     <div v-if="currentTab === '고객사 관리'" class="bg-[#f2f4f7]">
       <!-- '고객사 관리' 탭의 내용을 검사하고, 데이터가 없으면 메시지 표시 -->
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class="p-20">
           <CommonView/>
         </div>
       </div>
       <!-- 데이터가 있으면 데이터를 표시하는 컴포넌트 렌더링 -->
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class="p-20">
           <energy-table></energy-table>
         </div>
       </div>
@@ -27,12 +27,12 @@
 
     <div v-else-if ="currentTab === '발전소 관리'">
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class="p-20">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class=" p-20">
           <arrange-plant-view></arrange-plant-view>
         </div>
       </div>
@@ -40,12 +40,12 @@
 
     <div v-else-if ="currentTab === '발전소 할당'">
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class=" p-20">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class="p-20">
           <plant-allo-view></plant-allo-view>
         </div>
       </div>
@@ -74,28 +74,25 @@ export default {
       tabs: ['고객사 관리', '발전소 관리', '발전소 할당'],
       hasCustomerData: true
     }
-  },
-  computed: {
-    title () {
-      switch (this.currentTab) {
-        case '고객사 관리':
-          return '고객사 관리'
-        case '발전소 관리':
-          return '발전소 관리'
-        case '발전소 할당':
-          return '발전소 할당'
-        default:
-          return '타이틀 없음'
-      }
-    }
   }
+  // computed: {
+  //   title () {
+  //     switch (this.currentTab) {
+  //       case '고객사 관리':
+  //         return '고객사 관리'
+  //       case '발전소 관리':
+  //         return '발전소 관리'
+  //       case '발전소 할당':
+  //         return '발전소 할당'
+  //       default:
+  //         return '타이틀 없음'
+  //     }
+  //   }
+  // }
 
 }
 </script>
 
 <style scoped>
-/* 필요에 따른 스타일 추가 */
-body{
-  background: #f2f4f7;
-}
+
 </style>
