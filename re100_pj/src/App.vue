@@ -1,12 +1,13 @@
 <template>
-  <div id="app" class="bg-[#f2f4f7] h-screen">
+  <div id="app" class="bg-[#f2f4f7] min-h-screen">
     <!-- Header Layout with tab selection event -->
     <HeaderLayoutVue @tab-selected="handleTabChange"/>
-
-    <div v-if="currentTab === tabs.REAL_TIME_INFO">
+    <!-- 실시간 정보 -->
+    <div v-if="currentTab === tabs.REAL_TIME_INFO" class="relative z-20  bottom-[100px]">
       <MainContentCardsVue/>
       <EnergyTable/>
     </div>
+    <!-- 이행률 -->
     <div v-else-if="currentTab === tabs.COMPLIANCE_RATE">
       <ComplianceRateView/>
     </div>
@@ -67,6 +68,7 @@ export default {
   }
 }
 </script>
+
 <style>
 
 </style>

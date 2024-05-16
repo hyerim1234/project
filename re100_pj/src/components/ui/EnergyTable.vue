@@ -1,10 +1,9 @@
 <template>
-  <div class="p-6">
-    <h1 class="text-lg font-bold">고객 목록</h1>
+  <div class="p-6 flex align-center justify-between flex-col">
     <ReusableTable :headers="customerHeaders" :rows="customerRows" />
 
-    <h1 class="text-lg font-bold mt-10">제품 목록</h1>
-    <ReusableTable :headers="productHeaders" :rows="productRows" />
+    <!-- <h1 class="text-lg font-bold mt-10">제품 목록</h1>
+    <ReusableTable :headers="productHeaders" :rows="productRows" /> -->
 
     <!-- 다른 테이블 추가 가능 -->
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="rounded-lg">
-    <div class="relative  w-1/5">
+    <div class="relative  w-1/5 text-black">
       <svg viewBox="0 0 36 36" class=" my-2">
         <!-- 배경 원 -->
         <path class="circle-bg"

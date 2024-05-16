@@ -32,6 +32,7 @@ const routes = [
     name: 'common',
     component: CommonView
   },
+
   {
     path: '/rate/compliance',
     name: 'compliance',

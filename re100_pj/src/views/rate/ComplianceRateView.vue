@@ -36,6 +36,7 @@
           <rate-plant-info-tab></rate-plant-info-tab>
         </div>
       </div>
+
     </div>
 
     <div v-else-if ="currentTab === '이행현황'">

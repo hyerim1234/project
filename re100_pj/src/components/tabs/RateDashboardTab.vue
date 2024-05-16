@@ -9,7 +9,8 @@
   </div>
 
   <div class="mt-10">
-    <energy-table></energy-table>
+    <!-- <energy-table></energy-table> -->
+    발전소 리스트 테이블 준비중...
   </div>
 
 </template>
