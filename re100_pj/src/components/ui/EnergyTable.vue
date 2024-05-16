@@ -1,36 +1,36 @@
 <template>
-  <div class="p-6 flex align-center justify-between flex-col">
-    <ReusableTable :headers="customerHeaders" :rows="customerRows" />
-
-    <!-- <h1 class="text-lg font-bold mt-10">제품 목록</h1>
-    <ReusableTable :headers="productHeaders" :rows="productRows" /> -->
-
-    <!-- 다른 테이블 추가 가능 -->
+  <div class="p-6 flex align-center justify-between flex-col bg-white shadow-lg rounded-lg">
+    <!-- <h2 class="text-lg font-bold mb-4">고객사 리스트</h2> -->
+    <ReusableTable :headers="headers" :rows="rows" :rowsPerPage="5" />
   </div>
 </template>
 
 <script>
-import ReusableTable from '@/components/ui/ReusableTable.vue'
+import ReusableTable from '@/components/ui/ReusableTable.vue';
 
 export default {
   components: {
     ReusableTable
   },
-  data () {
+  data() {
     return {
-      customerHeaders: ['고객명', '이메일주소', '연락처', '발전소 개수', '총용량', '생성일', '비밀번호'],
-      customerRows: [
-        ['사용자명1', 're101010@hallsk', '010-1234-1234', 1, '80MW', '2024-04-04', '변경'],
-        ['사용자명2', 're101010@hallsk', '010-1234-1234', 1, '80MW', '2024-04-04', '변경']
-      ],
-      productHeaders: ['제품명', '카테고리', '가격', '재고', '제조사'],
-      productRows: [
-        ['제품명1', '카테고리1', '₩10000', 50, '제조사1'],
-        ['제품명2', '카테고리2', '₩20000', 30, '제조사2']
+      headers: ['이름', '개소수', '용량', '형태', '달성률', '위치'],
+      rows: [
+        ['이름', '2개소', '300MW', '자가소비(혼합)', '76%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '48%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '17%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '48%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '48%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '48%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '48%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '48%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '48%', '경북 구미시 산동읍'],
+        ['이름', '3개소', '500MW', '자가소비', '48%', '경북 구미시 산동읍'],
+        // 추가 데이터...
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
