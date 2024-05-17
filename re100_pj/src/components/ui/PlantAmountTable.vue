@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    showDetails(entry) {
+    showDetails (entry) {
       // 더보기 버튼 클릭 시 처리할 로직을 여기에 추가
       alert(`날짜: ${entry.date}\n총 발전량: ${entry.totalGeneration}\n발전량: ${entry.generation}\n예비발생: ${entry.reserve}`)
     }

@@ -1,5 +1,7 @@
+<!-- 이행률  -->
 <template>
   <div class="bg-[#f2f4f7] min-h-screen mt-[-180px]">
+    <!-- 이행률 탭 메뉴 -->
     <nav class="flex space-x-4 bg-[#0b2549] pt-4 pl-8">
       <a v-for="tab in tabs" :key="tab"
          :class="['py-2 px-4 text-sm font-medium text-center cursor-pointer',
@@ -86,6 +88,7 @@ import RatePlantInfoTab from '@/components/tabs/RatePlantInfoTab.vue'
 import RateReportTab from '@/components/tabs/RateReportTab.vue'
 import RateManageTab from '@/components/tabs/RateManageTab.vue'
 import RateCurrentTab from '@/components/tabs/RateCurrentTab.vue'
+import BaseChildTable from '@/components/ui/table/BaseChildTable.vue'
 // 가정: CommonView 컴포넌트가 존재하고, 이를 가져옵니다.
 
 export default {
@@ -94,7 +97,8 @@ export default {
     RatePlantInfoTab,
     RateReportTab,
     RateManageTab,
-    RateCurrentTab
+    RateCurrentTab,
+    BaseChildTable
   },
   data () {
     return {

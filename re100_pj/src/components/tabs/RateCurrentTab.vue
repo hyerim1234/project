@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import EnergyTable from '../ui/EnergyTable.vue'
+import EnergyTable from '@/components/ui/table/EnergyTable.vue'
 export default {
   components: { EnergyTable },
   data () {

@@ -56,7 +56,7 @@
 <script>
 // 가정: CommonView 컴포넌트가 존재하고, 이를 가져옵니다.
 import CommonView from '@/views/manage/CommonView.vue'
-import EnergyTable from './EnergyTable.vue'
+import EnergyTable from '@/components/ui/table/EnergyTable.vue'
 import PlantAlloView from '@/views/manage/PlantAlloView.vue'
 import ArrangePlantView from '@/views/manage/ArrangePlantView.vue'
 

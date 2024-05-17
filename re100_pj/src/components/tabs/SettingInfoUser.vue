@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import PasswordResetModal from '../modal/PwModal.vue'
+import PasswordResetModal from '../ui/modal/PwModal.vue'
 
 export default {
   components: {
