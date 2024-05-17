@@ -13,13 +13,13 @@
     <div v-if="currentTab === '고객사 관리'" class="bg-[#f2f4f7]">
       <!-- '고객사 관리' 탭의 내용을 검사하고, 데이터가 없으면 메시지 표시 -->
       <div v-if="!hasCustomerData">
-        <div class="p-20">
+        <div class="px-20">
           <CommonView/>
         </div>
       </div>
       <!-- 데이터가 있으면 데이터를 표시하는 컴포넌트 렌더링 -->
       <div v-else-if="hasCustomerData">
-        <div  class="p-20">
+        <div  class="px-20">
           <energy-table></energy-table>
         </div>
       </div>
@@ -27,12 +27,12 @@
 
     <div v-else-if ="currentTab === '발전소 관리'">
       <div v-if="!hasCustomerData">
-        <div class="p-20">
+        <div class="px-20">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class=" p-20">
+        <div class="px-20">
           <arrange-plant-view></arrange-plant-view>
         </div>
       </div>
@@ -40,12 +40,12 @@
 
     <div v-else-if ="currentTab === '발전소 할당'">
       <div v-if="!hasCustomerData">
-        <div class=" p-20">
+        <div class="px-20">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="p-20">
+        <div class="px-20">
           <plant-allo-view></plant-allo-view>
         </div>
       </div>

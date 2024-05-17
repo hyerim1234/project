@@ -1,9 +1,12 @@
 <template>
   <div class="flex  align-center justify-between">
-    <h1 class="text-lg font-bold">연도별 이행률</h1>
-    <form>
+    <!-- <h1 class="text-lg font-bold">연도별 이행률</h1> -->
+    <form class="flex items-center ">
+      <span class="sm:px-3.5 p-3  border rounded-l border-gray-300">
+          <img src="https://jdtech.farm.lasee.io/images/calender.svg">
+      </span>
       <div class="relative">
-          <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="내용" required />
+          <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="2024" required />
           <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white-100">
             검색
             <!-- <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

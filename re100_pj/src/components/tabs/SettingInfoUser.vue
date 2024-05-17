@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#ffffff] p-6 rounded-lg h-[770px]">
+  <div class="bg-[#ffffff] p-6 rounded-lg h-[770px] mt-4">
     <h1 class="font-bold text-lg mb-6">내정보 수정</h1>
     <form @submit.prevent="updateProfile" class="max-w-lg space-y-[26px]">
       <div class="mb-5 flex items-center">

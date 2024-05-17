@@ -2,13 +2,20 @@
 <template>
   <div class="bg-[#f2f4f7] min-h-screen mt-[-180px]">
     <!-- 이행률 탭 메뉴 -->
-    <nav class="flex space-x-4 bg-[#0b2549] pt-4 pl-8">
-      <a v-for="tab in tabs" :key="tab"
-         :class="['py-2 px-4 text-sm font-medium text-center cursor-pointer',
-                  currentTab === tab ? 'bg-[#f2f4f7] text-[#0b2549] font-bold rounded-t-lg' : 'text-gray-600 border-transparent']"
-         @click="currentTab = tab">
-        {{ tab }}
-      </a>
+    <nav class="flex justify-between space-x-4 bg-[#0b2549] pt-4 pl-8 px-20 ">
+      <div class="flex space-x-4">
+        <a v-for="tab in tabs" :key="tab"  @click="currentTab = tab"
+           :class="['py-2 px-4 text-sm font-medium text-center cursor-pointer', currentTab === tab ? 'bg-[#f2f4f7] text-[#0b2549] font-bold rounded-t-lg' : 'text-gray-600 border-transparent']">
+          {{ tab }}
+        </a>
+      </div>
+      <div v-if="currentTab === '이행현황'" class="relative bottom-[5px]">
+        <select v-model="selectedCustomer" class="p-2 border border-gray-300 rounded-lg w-[310px]">
+          <option>고객사 A</option>
+          <option>고객사 B</option>
+          <option>고객사 C</option>
+        </select>
+      </div>
     </nav>
 
     <!-- 조건부 렌더링을 사용한 컴포넌트 또는 메시지 표시 -->
@@ -105,7 +112,8 @@ export default {
       showModal: false,
       currentTab: '대시보드',
       tabs: ['대시보드', '발전소 정보', '이행현황' , '리포트', '이행관리'],
-      hasCustomerData: true
+      hasCustomerData: true,
+      selectedCustomer: '고객사 A' //초기값을 고객사 A로 설정
     }
   }
 }

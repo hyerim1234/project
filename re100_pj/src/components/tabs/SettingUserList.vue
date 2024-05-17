@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[800px] bg-[#ffffff] p-6 rounded-xl shadow-md mx-auto">
+  <div class="h-[800px] bg-[#ffffff] p-6 rounded-xl shadow-md mx-auto  mt-4">
     <h1 class="text-lg font-bold">고객목록</h1>
     <div class="overflow-hidden">
       <div class="mt-8 overflow-y-auto h-[600px]">

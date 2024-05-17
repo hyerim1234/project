@@ -12,13 +12,13 @@
     <!-- 조건부 렌더링을 사용한 컴포넌트 또는 메시지 표시 -->
     <div v-if="currentTab === '내정보수정'" class="bg-[#f2f4f7]">
       <div v-if="!hasCustomerData">
-        <div class="p-10">
+        <div class="px-20">
           <CommonView/>
         </div>
       </div>
       <!-- 데이터가 있으면 데이터를 표시하는 컴포넌트 렌더링 -->
       <div v-else-if="hasCustomerData">
-        <div  class="p-10">
+        <div class="px-20">
           <setting-info-user/>
         </div>
       </div>
@@ -26,12 +26,12 @@
 
     <div v-else-if ="currentTab === '고객목록보기'">
       <div v-if="!hasCustomerData">
-        <div class="p-10">
+        <div class="px-20">
           <!-- <CommonView/> -->
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="p-10">
+        <div class="px-20">
           <setting-user-list/>
         </div>
       </div>
