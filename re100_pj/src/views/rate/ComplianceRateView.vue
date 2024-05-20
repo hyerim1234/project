@@ -9,7 +9,7 @@
           {{ tab }}
         </a>
       </div>
-      <div v-if="currentTab === '이행현황'" class="relative bottom-[5px]">
+      <div v-if="currentTab === '이행현황' || currentTab ==='시나리오'" class="relative bottom-[5px]">
         <select v-model="selectedCustomer" class="p-2 border border-gray-300 rounded-lg w-[310px]">
           <option>고객사 A</option>
           <option>고객사 B</option>

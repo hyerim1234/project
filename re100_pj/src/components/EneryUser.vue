@@ -75,9 +75,9 @@ export default {
       items: [
         { title: '자가소비', rate: 42.4, cost: 2.4, capacity: 948.8, width: 42.4, colorClass: 'bg-purple-800 font-bold  top-4 left-40',bgClass:'bg-white text-purple-800' },
         { title: 'PPA', rate: 35.6, cost: 1.8, capacity: 800.3, width: 35.6, colorClass: 'bg-green-500 font-bold  top-4 left-32', bgClass:'bg-white text-green-500' },
-        { title: 'REC', rate: 18.9, cost: 1.0, capacity: 0.0, width:0, colorClass: 'bg-lime-600 font-bold  top-4 left-0',bgClass:'bg-white text-lime-600' },
-        { title: '녹색프리미엄', rate: 18.9, cost: 1.0, capacity: 0.0, width:0, colorClass: 'bg-yellow-500 font-bold  top-4 left-0',bgClass:'bg-white text-yellow-500' },
-        { title: '지분투자', rate: 18.9, cost: 1.0, capacity: 0.0, width:0 , colorClass: 'bg-orange-500 font-bold  top-4 left-0', bgClass:'bg-white text-orange-500 border-b-0' },
+        { title: 'REC', rate: 18.9, cost: 0, capacity: 0.0, width:0, colorClass: 'bg-lime-600 font-bold  top-4 left-0',bgClass:'bg-white text-lime-600' },
+        { title: '녹색프리미엄', rate: 18.9, cost: 0, capacity: 0.0, width:0, colorClass: 'bg-yellow-500 font-bold  top-4 left-0',bgClass:'bg-white text-yellow-500' },
+        { title: '지분투자', rate: 18.9, cost: 0, capacity: 0.0, width:0 , colorClass: 'bg-orange-500 font-bold  top-4 left-0', bgClass:'bg-white text-orange-500 border-b-0' },
       ]
     }
   }
