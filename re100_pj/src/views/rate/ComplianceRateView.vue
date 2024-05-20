@@ -22,13 +22,13 @@
     <div v-if="currentTab === '대시보드'" class="bg-[#f2f4f7]">
       <!-- '고객사 관리' 탭의 내용을 검사하고, 데이터가 없으면 메시지 표시 -->
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class="pt-6">
           <CommonView/>
         </div>
       </div>
       <!-- 데이터가 있으면 데이터를 표시하는 컴포넌트 렌더링 -->
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class="pt-6">
           <rate-dashboard-tab></rate-dashboard-tab>
         </div>
       </div>
@@ -36,12 +36,12 @@
 
     <div v-else-if ="currentTab === '발전소 정보'">
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class="pt-6">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class="pt-6">
           <rate-plant-info-tab></rate-plant-info-tab>
         </div>
       </div>
@@ -50,12 +50,12 @@
 
     <div v-else-if ="currentTab === '이행현황'">
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class="pt-6">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class="pt-6">
           <rate-current-tab></rate-current-tab>
         </div>
       </div>
@@ -63,12 +63,12 @@
 
     <div v-else-if ="currentTab === '리포트'">
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class="pt-6">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class="pt-6">
           <rate-report-tab></rate-report-tab>
         </div>
       </div>
@@ -76,12 +76,12 @@
 
     <div v-else-if ="currentTab === '시나리오'">
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class="pt-6">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class="pt-6">
           <!-- <rate-report-tab></rate-report-tab> -->
           <ratescenario-tab-vue></ratescenario-tab-vue>
         </div>
@@ -90,12 +90,12 @@
 
     <div v-else-if ="currentTab === '이행관리'">
       <div v-if="!hasCustomerData">
-        <div class="max-h-[600px] p-10">
+        <div class="pt-6">
           <CommonView/>
         </div>
       </div>
       <div v-else-if="hasCustomerData">
-        <div  class="max-h-[600px] p-10">
+        <div  class="pt-6">
           <rate-manage-tab></rate-manage-tab>
         </div>
       </div>
