@@ -83,32 +83,32 @@ export default {
 
 <style>
 /* 전역 스타일 */
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
+  body {
+    margin: 0;
+    font-family: 'Pretendard Variable', sans-serif;
+  }
 
-#app {
-  background-color: #f2f4f7;
-  min-height: 100vh;
-}
+  #app {
+    background-color: #f2f4f7;
+    min-height: 100vh;
+  }
 
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-}
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
 
-.bg-white {background-color: #ffffff;}
+  .bg-white {background-color: #ffffff;}
 
-.shadow-lg { box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);}
+  .shadow-lg { box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);}
 
-.rounded-lg {  border-radius: 0.5rem;}
+  .rounded-lg {  border-radius: 0.5rem;}
 
-.p-6 { padding: 1.5rem;}
+  .p-6 { padding: 1.5rem;}
 
-.mt-4 { margin-top: 1rem;}
+  .mt-4 { margin-top: 1rem;}
 
-.pt-6 { padding-top: 1.5rem;}
+  .pt-6 { padding-top: 1.5rem;}
 
-.pl-6 {padding-left: 1.5rem;}
+  .pl-6 {padding-left: 1.5rem;}
 </style>
