@@ -74,6 +74,20 @@
       </div>
     </div>
 
+    <div v-else-if ="currentTab === '시나리오'">
+      <div v-if="!hasCustomerData">
+        <div class="max-h-[600px] p-10">
+          <CommonView/>
+        </div>
+      </div>
+      <div v-else-if="hasCustomerData">
+        <div  class="max-h-[600px] p-10">
+          <!-- <rate-report-tab></rate-report-tab> -->
+          <ratescenario-tab-vue></ratescenario-tab-vue>
+        </div>
+      </div>
+    </div>
+
     <div v-else-if ="currentTab === '이행관리'">
       <div v-if="!hasCustomerData">
         <div class="max-h-[600px] p-10">
@@ -96,6 +110,7 @@ import RateReportTab from '@/components/tabs/RateReportTab.vue'
 import RateManageTab from '@/components/tabs/RateManageTab.vue'
 import RateCurrentTab from '@/components/tabs/RateCurrentTab.vue'
 import BaseChildTable from '@/components/ui/table/BaseChildTable.vue'
+import RatescenarioTabVue from '@/components/tabs/RatescenarioTab.vue'
 // 가정: CommonView 컴포넌트가 존재하고, 이를 가져옵니다.
 
 export default {
@@ -105,13 +120,14 @@ export default {
     RateReportTab,
     RateManageTab,
     RateCurrentTab,
-    BaseChildTable
+    BaseChildTable,
+    RatescenarioTabVue
   },
   data () {
     return {
       showModal: false,
       currentTab: '대시보드',
-      tabs: ['대시보드', '발전소 정보', '이행현황' , '리포트', '이행관리'],
+      tabs: ['대시보드', '발전소 정보', '이행현황' , '리포트','시나리오','이행관리'],
       hasCustomerData: true,
       selectedCustomer: '고객사 A' //초기값을 고객사 A로 설정
     }
