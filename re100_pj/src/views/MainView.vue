@@ -1,44 +1,114 @@
+<!-- 헤더, nav 탭 , 푸터 , 모달  -->
 <template>
-    <div class="bg-[#f2f4f7]">
-      <!-- Header Section -->
-      <!-- <nav class="flex space-x-4 bg-[#0b2549]">
-        <a v-for="tab in tabs" :key="tab"
-           :class="['py-2 px-4 text-sm font-medium text-center rounded-full cursor-pointer',
-                    currentTab === tab ? 'bg-blue-600 text-white rounded-full' : 'text-gray-600 border-transparent']"
-           @click="currentTab = tab">
-          {{ tab }}
-        </a>
-      </nav> -->
-
-      <!-- Main Content Section -->
-      <div class="flex flex-wrap justify-between items-center gap-6  bg-gray-50">
-        <div v-for="card in cards" :key="card.title" class="bg-white rounded-lg shadow-md  flex flex-col items-center">
-          <progress-circle :percentage="card.percentage" />
-          <h3 class="text-lg font-semibold mt-2">{{ card.title }}</h3>
-          <p class="text-gray-600">{{ card.subtitle }}</p>
-        </div>
-      </div>
+  <div id="app" class="bg-[#f2f4f7] min-h-screen ">
+    <HeaderLayoutVue @tab-selected="handleTabChange"/>
+    <div v-if="currentTab === tabs.REAL_TIME_INFO" class="relative z-20 bottom-[100px]  px-20">
+      <MainContentCardsVue :cards="realTimeCards" :showMoreButton="true"  @show-more="showMoreModal"/>
+      <EnergyTable/>
     </div>
-  </template>
+    <div v-else-if="currentTab === tabs.COMPLIANCE_RATE" >
+      <ComplianceRateView/>
+    </div>
+    <div v-else-if="currentTab === tabs.MANAGEMENT">
+      <TabContent/>
+    </div>
+    <div v-else-if="currentTab === tabs.SETTINGS">
+      <SettingView/>
+    </div>
+    <FooterLayoutVue/>
+    <ProgressStatusModal v-if="showModal" @close="closeModal"/>
+  </div>
+</template>
 
 <script>
-import ProgressCircle from '@/components/chart/ProgressCircle.vue'
+import HeaderLayoutVue from '@/components/layouts/HeaderLayout.vue'
+import FooterLayoutVue from '@/components/layouts/FooterLayout.vue'
+import EnergyTable from '@/components/ui/table/EnergyTable.vue'
+import ComplianceRateView from '@/views/rate/ComplianceRateView.vue'
+import MainContentCardsVue from '@/components/ui/MainContentCards.vue'
+import TabContent from '@/components/ui/TabContent.vue'
+import SettingView from '@/views/setting/SettingView.vue'
+import ProgressStatusModal from '@/components/ui/modal/ProgressStatusModal.vue'
+
+const TABS = {
+  REAL_TIME_INFO: '실시간 정보',
+  COMPLIANCE_RATE: '이행률',
+  MANAGEMENT: '관리',
+  SETTINGS: '설정'
+}
 
 export default {
+  name: 'App',
   components: {
-    ProgressCircle
+    HeaderLayoutVue,
+    FooterLayoutVue,
+    EnergyTable,
+    MainContentCardsVue,
+    ComplianceRateView,
+    TabContent,
+    SettingView,
+    ProgressStatusModal
   },
   data () {
     return {
-      // currentTab: '',
-      // tabs: ['실시간 정보', '이행률', '관리', '설정', 'Hired'],
-      cards: [
-        { title: "RE100 이행률", subtitle: "56%", percentage: 56 },
-        { title: "이행현황", subtitle: "20개", percentage: 56 },
-        { title: "전력 사용량", subtitle: "300.3 MW", percentage: 25 },
-        { title: "발전소 개소수", subtitle: "20개", percentage: 56}
+      currentTab: TABS.REAL_TIME_INFO,
+      tabs: TABS,
+      showModal: false,
+      realTimeCards: [
+        { title: 'RE100 이행률', percentage: 50 },
+        { title: '이행현황', percentage: 40 },
+        { title: '전력 사용량', percentage: 16 },
+        { title: '발전소 개소수', percentage: 20 }
+      ],
+      dashboardCards: [
+        { title: 'RE100 이행률', percentage: 50 },
+        { title: '이행현황', percentage: 40 },
+        { title: '전력 사용량', percentage: 16 }
       ]
+    }
+  },
+  methods: {
+    handleTabChange (tab) {
+      this.currentTab = tab
+    },
+    showMoreModal () {
+      this.showModal = true
+    },
+    closeModal () {
+      this.showModal = false
     }
   }
 }
 </script>
+
+<style>
+/* 전역 스타일 */
+  body {
+    margin: 0;
+    font-family: 'Pretendard Variable', sans-serif;
+  }
+
+  #app {
+    background-color: #f2f4f7;
+    min-height: 100vh;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .bg-white {background-color: #ffffff;}
+
+  .shadow-lg { box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);}
+
+  .rounded-lg {  border-radius: 0.5rem;}
+
+  .p-6 { padding: 1.5rem;}
+
+  .mt-4 { margin-top: 1rem;}
+
+  .pt-6 { padding-top: 1.5rem;}
+
+  .pl-6 {padding-left: 1.5rem;}
+</style>

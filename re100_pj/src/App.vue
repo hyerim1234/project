@@ -1,5 +1,5 @@
 <!-- 헤더, nav 탭 , 푸터 , 모달  -->
-<template>
+<!-- <template>
   <div id="app" class="bg-[#f2f4f7] min-h-screen ">
     <HeaderLayoutVue @tab-selected="handleTabChange"/>
     <div v-if="currentTab === tabs.REAL_TIME_INFO" class="relative z-20 bottom-[100px]  px-20">
@@ -111,4 +111,14 @@ export default {
   .pt-6 { padding-top: 1.5rem;}
 
   .pl-6 {padding-left: 1.5rem;}
-</style>
+</style> -->
+
+<template>
+  <router-view />
+</template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script>
